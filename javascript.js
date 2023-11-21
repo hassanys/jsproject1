@@ -19,52 +19,39 @@ function getComputerChoice (){
     }
 
 }
-console.log(getComputerChoice())
 
 //  step 2: define function for a single round
    
-const playerSelection = "rock".toLowerCase();
+const playerSelection = prompt("Rock, Paper or Scissors");
 const computerSelection = getComputerChoice();
 
 
 function playRound(playerSelection, computerSelection) {
     // your code here!
-  if (playerSelection === computerSelection){
-     return "draw"
+  
+    if  ((playerSelection === "Rock" && computerSelection === "Scissors") ||
+        (playerSelection === "Paper" && computerSelection === "Rock") ||
+        (playerSelection === "Scissors" && computerSelection === "Paper")
+  )
+    {
+    return "Player wins! ";
   }
 
-  else if (playerSelection === "rock" && computerSelection === "Paper"){
-    return "You win! Paper beats Rock"
-  }
+  else if ((playerSelection === "Rock" && computerSelection === "Paper") ||      
+           (playerSelection === "Paper" && computerSelection === "Scissors") ||
+           (playerSelection === "Scissors" && computerSelection ===  "Rock")
+)
+    {
+    return "You Lose, Computer wins"
+    }
+
 
   else {
-    return "You Lose! Paper beats Rock"
-  }
+    return "draw";
+    }
 }
 
-console.log(playRound(playerSelection,computerSelection))
-
-
-
-
-
-
-
-// function playRound(playerSelection, computerSelection {
-
-// const playerScore = 0
-// const computerScore = 0
-//      if (playerSelection === computerSelection) {
-//            console.log (Draw")
-//     }  
-
-//     else if  ((playerSelection === "Rock" && computerSelection === "Scissors") ||
-//     (playerSelection === "Paper" && computerSelection === "Rock") ||
-//     (playerSelection === "Scissors" && computerSelection === "Paper")
-// )   {
-//     computerScore++
-//     console.log("You win")
-//     }
-    
-
-
+console.log(playRound(playerSelection,computerSelection));
+console.log(computerSelection)
+//  step 3 making a function for the 5 game round.
+ 
