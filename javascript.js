@@ -20,7 +20,7 @@ function getComputerChoice (){
 console.log(getComputerChoice())
 
 
-// //  step 2: define function for a single round
+//  step 2: define function for a single round
 //  this has been indented into function game and called with 
 //  console.log*
 
@@ -30,9 +30,9 @@ console.log(getComputerChoice())
 //  step 3 making a function for the 5 game round.
 
   
-  //  inside this function we run our loop which plays 5 games,
-  //  our function which generates the random computer value
-  //  our function which simulates a round.
+//    inside this function we run our loop which plays 5 games,
+//    our function which generates the random computer value
+//    our function which simulates a round.
 
 
   
@@ -59,15 +59,15 @@ function game(){
           
         //  player then enters value . NoCase ignores case sensitivity
         let playerSelection = prompt("Rock, Paper or Scissors", "paper");        
-        let playerSelectionNoCase = playerSelection[0].toUpperCase() + playerSelection.slice(1);
+        let playerScore = playerSelection[0].toUpperCase() + playerSelection.slice(1);
         let computerSelection = getComputerChoice();
 
 
         //If value is other than rock/paper/scissors 
         // player is prompted again to enter a value
-        if (playerSelectionNoCase !== "Paper" &&
-        playerSelectionNoCase !== "Rock" && 
-        playerSelectionNoCase !== "Scissors" &&
+        if (playerScore !== "Paper" &&
+        playerScore !== "Rock" && 
+        playerScore !== "Scissors" &&
         roundsPlayed <= 5)
         {
           alert("Error!! Please enter correct value");
@@ -75,44 +75,41 @@ function game(){
           roundsPlayed--
           continue
         }
-        
-        
-
 
       //   outcomes
         console.log(welcomePlayer);
-        console.log( `You chose : ${playerSelectionNoCase}`);
+        console.log( `You chose : ${playerScore}`);
         console.log(`Computer chose : ${computerSelection}`);
         //  function playRound determine round outcome which is looped
-        console.log(playRound(playerSelectionNoCase , computerSelection));
+        console.log(playRound(playerScore , computerSelection));
         console.log( `Player Score :  ${pScore}`);
         console.log( `Computer Score :  ${cScore}`);
         console.log(`Tie Number :  ${ties}`);
        
         // play round and determines all outcomes the winner, loser and ties
-    function playRound(playerSelectionNoCase, computerSelection) {
+    function playRound(playerScore, computerSelection) {
         
-      if  ((playerSelectionNoCase === "Rock" && computerSelection === "Scissors") ||
-          (playerSelectionNoCase === "Paper" && computerSelection === "Rock") ||
-          (playerSelectionNoCase === "Scissors" && computerSelection === "Paper")
+      if  ((playerScore === "Rock" && computerSelection === "Scissors") ||
+          (playerScore === "Paper" && computerSelection === "Rock") ||
+          (playerScore === "Scissors" && computerSelection === "Paper")
       )
 
         { pScore++;
           return "Round winner: Player ";
         }
 
-      else if((computerSelection === "Rock" && playerSelectionNoCase  === "Scissors") ||
-              (computerSelection === "Paper" && playerSelectionNoCase === "Rock") ||
-              (computerSelection === "Scissors" && playerSelectionNoCase === "Paper")
+      else if((computerSelection === "Rock" && playerScore  === "Scissors") ||
+              (computerSelection === "Paper" && playerScore === "Rock") ||
+              (computerSelection === "Scissors" && playerScore === "Paper")
       )
 
         {cScore++
         return "Round winner: Computer";
         }
 
-      else if((computerSelection === "Rock" && playerSelectionNoCase  === "Rock") ||
-              (computerSelection === "Paper" && playerSelectionNoCase === "Paper") ||
-              (computerSelection === "Scissors" && playerSelectionNoCase === "Scissors")
+      else if((computerSelection === "Rock" && playerScore  === "Rock") ||
+              (computerSelection === "Paper" && playerScore === "Paper") ||
+              (computerSelection === "Scissors" && playerScore === "Scissors")
       )
 
         {ties++
@@ -134,4 +131,4 @@ function game(){
 
 game();
 
- 
+
